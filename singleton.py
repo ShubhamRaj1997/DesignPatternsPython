@@ -5,11 +5,11 @@ Problem:
 Solution:
     Create single connection and save it as singleton, remember in singleton we use same object again
     Problem again:
-        In multithreaded environments again this problem will arise!, every thread can create new singleton
+        In multi-threaded environments again this problem will arise!, every thread can create new singleton
         object thus defeats the purpose of singleton
     soln again:
         Create instance with Lock, and check if the object is already there!
-
+This creates issues and overhead un necessary thus it is advised not to use it and considered as anti-pattern
 """
 
 
