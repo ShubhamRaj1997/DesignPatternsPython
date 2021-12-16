@@ -8,6 +8,10 @@ resources <=> views can happen, cartesian products we have
 Basically it separates the business logic (maybe anything) from the actual implementation, the similar thing is done by
 strategy design pattern for dependency inversion but here we can have common implementations for different but similar
 resources
+
+Also if you have two separate classes and they are using each other then, for combinations of those classed one can use
+bridge pattern, it makes easier to add or remove the new classes from both types
+If you have A classes using B other classes, it reduces total number of classes you may have to write to A+B from A*B
 """
 from abc import ABC, abstractmethod
 
