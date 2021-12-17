@@ -21,7 +21,6 @@ class Website(ABC):
 
 
 class Trevago(Website):
-
     def is_room_booked(self, room_id):
         pass
 
@@ -47,3 +46,13 @@ class HotelBooker(Mediator):
             if wb != website and wb.is_room_booked(room_id):
                 return True
         return False
+
+    def book_room(self, room_id, website: Website):
+        if self.is_booked_already(room_id, website):
+            raise Exception("Already booked buddy!")
+        # book
+
+bookingcom = Bookingcom()
+booker = HotelBooker()
+booker.add(bookingcom)
+booker.is_booked_already("1",bookingcom)

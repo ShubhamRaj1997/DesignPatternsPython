@@ -33,7 +33,7 @@ class CheckInService(NotificationService):
         super().__init__()
         self.__notification_services = []
 
-    def attach(self, notification_service: NotificationService):
+    def attach(self, notification_channel: NotificationService):
         self.__notification_services.append(notification_service)
 
     def detach(self, notification_service: NotificationService):

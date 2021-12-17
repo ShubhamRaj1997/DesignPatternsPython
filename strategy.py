@@ -54,8 +54,8 @@ class LFUCacheStrategy(CacheStrategy):
 
 
 class CacheLayer(object):
-    def __init__(self):
-        self._cache_strategy = None
+    def __init__(self, cache_strategy):
+        self._cache_strategy = cache_strategy
 
     @property
     def cache_strategy(self):
@@ -75,3 +75,10 @@ class CacheLayer(object):
         data = self._cache_strategy.get()
         # postprocess
         return data
+
+
+lru = CacheLayer(LRUCacheStrategy())
+lru.store_data("data")
+
+lfu = CacheLayer(LFUCacheStrategy())
+lfu.store_data("data1")
