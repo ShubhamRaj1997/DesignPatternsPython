@@ -4,6 +4,9 @@ Invoker: The object that sends the command to the receiver. E.g., A button.
 Command Object: Itself, an object, that implements an execute, or action method, and contains all required information to execute it.
 Client: The application or component that is aware of the Receiver, Invoker and Commands.
 
+Command gets encapsulated, here you can actually change behaviour of same execute commands from invoker
+based on the receiver how receiver delegates the task on command performance, here invoker doesnt messup with
+receiver , receiver and command does the stuff
 Problem:
     Developed UI for buttons, you create a Button class and there are 10 of buttons on UI
     you created 10 subclasses!!!, you could use strategy pattern also

@@ -1,5 +1,12 @@
 """
 multi level cache system, where you handle something and passon to another object
+
+Main idea here is that we have handler class which actually handles the next handler part
+once you set the handler of current class, we just call super class' handle method which calls
+current subclass's next handler classe's handle
+
+Best case is MultiLevel Cache system
+but the only problem is we need to add more and more code for each level
 """
 from abc import ABC, abstractmethod
 

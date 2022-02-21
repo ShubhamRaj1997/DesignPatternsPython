@@ -3,6 +3,7 @@ Proxy pattern is useful for
 * lazy loading for class
 * caching
 * logging
+* authentication also
 
 """
 from abc import ABC, abstractmethod

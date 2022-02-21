@@ -7,6 +7,8 @@ Adapter Interface: The interface of the target that the adapter will need to imp
 Adapter: The concrete adapter class containing the adaption process.
 Client: The client application that will use the Adapter.
 
+Why it is useful? it allows you to plugin a class with other incompatible class
+
 
 """
 
