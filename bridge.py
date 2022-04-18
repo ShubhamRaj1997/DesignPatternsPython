@@ -12,6 +12,35 @@ resources
 Also if you have two separate classes and they are using each other then, for combinations of those classed one can use
 bridge pattern, it makes easier to add or remove the new classes from both types
 If you have A classes using B other classes, it reduces total number of classes you may have to write to A+B from A*B
+
+Basically we have small thumbnails and large thumbnails
+for videos and images
+now classes are:
+
+class Thumbnail:
+    def __init__(self, image):
+        self.preview = image
+
+class SmallThumbnail(Thumbnail):
+    pass
+
+class LargeThumbnail(Thumbnail):
+    pass
+
+class Media:
+    pass
+
+class Video(Media):
+    def get_preview(self, thumbnail):
+        return thumbnail.preview
+
+class Image(Media):
+    def get_preview(self, thumbnail):
+        return thumbnail.preview
+
+small thumbnail and large thumbnails extract that out and there is the bridge
+
+
 """
 from abc import ABC, abstractmethod
 
@@ -54,8 +83,8 @@ class Image(Media):
         self.thumbnail.get_thumbnail()
 
 
-a = Image(SmallThumbnail()).thumbnail
-b = Video(SmallThumbnail()).thumbnail
+a = Image(SmallThumbnail()).get_preview()
+b = Video(SmallThumbnail()).get_preview()
 
-c = Image(LargeThumbnail()).thumbnail
-d = Video(LargeThumbnail()).thumbnail
+c = Image(LargeThumbnail()).get_preview()
+d = Video(LargeThumbnail()).get_preview()

@@ -5,7 +5,7 @@ Command Object: Itself, an object, that implements an execute, or action method,
 Client: The application or component that is aware of the Receiver, Invoker and Commands.
 
 Command gets encapsulated, here you can actually change behaviour of same execute commands from invoker
-based on the receiver how receiver delegates the task on command performance, here invoker doesnt messup with
+based on the receiver how receiver delegates the task on command performance, here invoker doesnt mess with
 receiver , receiver and command does the stuff
 Problem:
     Developed UI for buttons, you create a Button class and there are 10 of buttons on UI
@@ -16,7 +16,7 @@ Problem:
 
     Basically
     Invoker can have additional functionalities like recording the commands and history for same
-    Command Object contains Receiver object and perform commands on that receiver
+    ***Command Object contains Receiver object and perform commands on that receiver***
     Command objects implements ICommand Interface and override execute method
     which in turn executes the command on receiver
 """

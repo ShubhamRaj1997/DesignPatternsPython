@@ -10,12 +10,12 @@ Solution:
     soln again:
         Create instance with Lock, and check if the object is already there!
 This creates issues and overhead un necessary thus it is advised not to use it and considered as anti-pattern
+
+why there is second check after locking
+
 """
 
-
 import threading
-
-
 
 
 class Singleton(type):
@@ -25,6 +25,11 @@ class Singleton(type):
     def __call__(cls, *args, **kwargs):
         if cls not in cls._instances:
             with cls._lock:
+                """
+                # another thread could have created the instance
+                # before we acquired the lock. So check that the
+                # instance is still nonexistent
+                """
                 if cls not in cls._instances:
                     cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
         return cls._instances[cls]

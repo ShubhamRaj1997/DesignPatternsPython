@@ -1,5 +1,5 @@
 """
-Your code may have heirarchies of objects! graph like code, there you use the composite design patterns
+Your code may have hierarchies of objects! graph like code, there you use the composite design patterns
 like one object has bunch of objects and those having other objects also
 So we have leaf and internal nodes as objects (are called composites)
 
